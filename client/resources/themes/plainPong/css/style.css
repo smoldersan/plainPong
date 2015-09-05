@@ -1,0 +1,53 @@
+
+body {
+    margin: 10px 10px 0 10px;
+}
+
+#game_panel {
+    /*float: left;*/
+    /*margin-left: 10px;*/
+
+}
+
+.panel, .panel-default {
+    /*border: 1px solid #0095DD;*/
+    /*border: 1px solid black;*/
+}
+
+.panel-body {
+    height: 515px;
+}
+
+#chatbox_panel {
+    /*float: left;*/
+    /*margin-top: 10px;*/
+
+    /*margin-left: 675px;*/
+    /*width: 360px;*/
+}
+
+#users_panel {
+    /*width: 200px;*/
+    /*margin-left: 1100px;*/
+}
+
+/*#chat_textarea {*/
+    /*height: 400px;*/
+    /*width: 100%;*/
+/*}*/
+
+
+
+/*#chat_input, #chat_button {*/
+    /*height: 42px;*/
+    /*box-sizing: border-box;*/
+    /*-moz-box-sizing: border-box;*/
+/*}*/
+
+/*#chat_input {*/
+    /*width: 75%;*/
+/*}*/
+
+/*#chat_button {*/
+    /*width: 20%;*/
+/*}*/

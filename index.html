@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="plainPongApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Plain Pong</title>
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="client/resources/themes/plainPong/css/style.css">
+
+</head>
+<body>
+
+<div ng-controller="AppCtrl" >
+    <div class="col-lg-7 col-sm-12">
+        <div id="game_panel" class="panel panel-default">
+            <div class="panel-heading">Game</div>
+            <div class="panel-body">
+                <canvas id="game_canvas" width="620" height="480"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-8">
+        <div id="chatbox_panel" class="panel panel-default">
+            <div class="panel-heading">Chatbox</div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <textarea id="chat_textarea" class="form-control" ng-model="chatTextarea" disabled  rows="21"></textarea>
+                </div>
+
+                <form id="chat_form" >
+                    <div class="input-group form-group">
+                        <input ng-model="chatInput" id="chat_input" class="form-control" placeholder="Your message..." />
+                        <span class="input-group-btn">
+                            <button id="chat_button" ng-click="sendMessage()" type="button" class="btn btn-default" ><i class="fa fa-paper-plane-o"></i></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-sm-4">
+        <div id="users_panel" class="panel panel-default">
+            <div class="panel-heading">Connected Users</div>
+            <div class="panel-body">
+                <form id="name_form" >
+                    <div class="input-group form-group">
+                        <input ng-model="nameInput" id="name_input" type="text" class="form-control" placeholder="New name" />
+                        <span class="input-group-btn">
+                            <button id="name_button" ng-click="changeName()" class="btn btn-default" type="button"><i class="fa fa-edit"></i></button>
+                        </span>
+                    </div>
+                </form>
+
+                <p ng-repeat="user in users">
+                    <button ng-click="challengeUser(user)" type="button" class="btn btn-default form-control" >
+                        {{ user.name }}
+                        <i ng-if="curUser.name !== user.name" class="fa fa-gavel"></i>
+                        <span ng-if="curUser.name == user.name" class="badge">You</span>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!--For compatibility-->
+<!--<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+
+<script src="socket.io/socket.io.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+<script src="client/js/game/inputHandler.js"></script>
+<script src="client/js/game/gameRenderer.js"></script>
+<script src="client/js/game/game.js"></script>
+
+<script src="client/js/app.js"></script>
+<script src="client/js/controllers.js"></script>
+<script src="client/js/directives.js"></script>
+<script src="client/js/services.js"></script>
+
+</body>
+</html>

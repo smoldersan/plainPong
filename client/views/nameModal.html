@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h3 class="modal-title">Welcome</h3>
+</div>
+<div class="modal-body">
+    <label for="init_name_input">Choose a username:</label>
+    <input ng-model="initNameInput" id="init_name_input" class="form-control" placeholder="Username"
+           autofocus ng-keypress="keyPressed($event, initNameInput)" />
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="$close(initNameInput)"><i class="fa fa-check"></i> Ok</button>
+</div>
+
